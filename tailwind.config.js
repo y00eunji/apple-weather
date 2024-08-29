@@ -9,7 +9,7 @@ export default {
           100: '#E2E2D5',
           200: '#888883',
         },
-        backgroundSection: '#4C7DBC',
+        backgroundSection: '#3e75c2',
       },
       fontFamily: {
         dmsans: ['DM Sans', 'sans-serif'],

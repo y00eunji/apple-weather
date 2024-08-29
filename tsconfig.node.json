@@ -4,7 +4,7 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
-
+    "types": ["vite-plugin-svgr/client"],
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -21,5 +21,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts", ".eslintrc.cjs"]
+  "include": ["vite.config.ts", ".eslintrc.cjs", "src/shared/@types/svg.d.ts", "vite-env.d.ts"]
 }
