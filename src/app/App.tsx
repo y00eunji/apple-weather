@@ -1,7 +1,7 @@
 function App() {
   return (
-    <div className="App">
-      <div className="text-3xl font-bold underline">it goes Work!!</div>
+    <div className="w-full h-dvh flex items-center justify-center">
+      <div className="w-[480px] h-dvh bg-primary opacity-60 flex flex-col items-center gap-5"></div>
     </div>
   );
 }
