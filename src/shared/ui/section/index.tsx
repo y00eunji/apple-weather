@@ -28,7 +28,7 @@ export default function Section({ size, title, children, className, ...restProps
 
   return (
     <div className={cn(`w-[90%] rounded-3xl bg-backgroundSection ${customSize} ${className}`)} {...restProps}>
-      <div className="text-[15px] px-3 py-1">{title}</div>
+      <div className="text-[15px] p-4">{title}</div>
       {children}
     </div>
   );
