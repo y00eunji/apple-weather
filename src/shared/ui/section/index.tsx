@@ -6,6 +6,7 @@ type Size = 'daily' | 'detail' | 'hourly' | 'radar';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   size: Size;
+  title: string;
   children?: ReactNode;
 }
 
@@ -22,11 +23,12 @@ const getSectionAttributes = (size: Size) => {
   }
 };
 
-export default function Section({ size, children, className, ...restProps }: Props) {
+export default function Section({ size, title, children, className, ...restProps }: Props) {
   const customSize = getSectionAttributes(size);
 
   return (
-    <div className={cn(`w-[90%] rounded-3xl bg-backgroundSection ${customSize} `)} {...restProps}>
+    <div className={cn(`w-[90%] rounded-3xl bg-backgroundSection ${customSize} ${className}`)} {...restProps}>
+      <div className="text-[15px] px-3 py-1">{title}</div>
       {children}
     </div>
   );
