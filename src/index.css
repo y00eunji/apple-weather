@@ -1,11 +1,17 @@
 /* global.css */
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Apple";
+  font-weight: 400;
+  src: url("public/font/AppleSDGothicNeoM.ttf") format('ttf')
+}
+
+
 :root {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Apple", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;

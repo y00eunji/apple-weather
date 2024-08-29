@@ -4,15 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#6A92C4',
+        primary: '#4C7DBC',
         secondary: {
           100: '#E2E2D5',
           200: '#888883',
         },
-        backgroundSection: '#3e75c2',
-      },
-      fontFamily: {
-        dmsans: ['DM Sans', 'sans-serif'],
+        backgroundSection: '#004b98',
       },
     },
   },
