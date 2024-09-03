@@ -4,7 +4,7 @@ import { Status, Wrapper } from '@googlemaps/react-wrapper';
 
 function MapComponent() {
   const { ref } = useGoogleMaps();
-  return <div ref={ref} id="map" className="h-[90%]" />;
+  return <div ref={ref} id="map" className="h-[90%] w-full" />;
 }
 
 export default function Map() {
