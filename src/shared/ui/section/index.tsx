@@ -13,13 +13,13 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const getSectionAttributes = (size: Size) => {
   switch (size) {
     case 'hourly':
-      return 'h-[200px]';
+      return 'h-[180px]';
     case 'daily':
-      return 'h-[350px]';
+      return 'h-[315px]';
     case 'radar':
       return 'h-[400px]';
     case 'detail':
-      return 'w-[200px] h-[200px]';
+      return 'w-[210px] h-[210px]';
   }
 };
 
@@ -27,8 +27,8 @@ export default function Section({ size, title, children, className, ...restProps
   const customSize = getSectionAttributes(size);
 
   return (
-    <div className={cn(`w-[90%] rounded-3xl bg-backgroundSection ${customSize} ${className}`)} {...restProps}>
-      <div className="text-[15px] p-4">{title}</div>
+    <div className={cn(`w-[90%] rounded-3xl bg-backgroundSection p-4 ${customSize} ${className}`)} {...restProps}>
+      <div className="text-[15px] mb-2">{title}</div>
       {children}
     </div>
   );

@@ -1,20 +1,20 @@
-import Daily from '@/widgets/daily';
-import Details from '@/widgets/details';
-import Hourly from '@/widgets/hourly';
-import Radar from '@/widgets/radar';
-import Summary from '@/widgets/summary';
+import CalculatorApp from '@/pages/CalculatorApp.tsx';
+import WeatherApp from '@/pages/WeatherApp.tsx';
+import Navigation from '@/shared/ui/nav';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="w-full h-full flex items-center justify-center text-white">
-      <div className="w-[480px] h-full bg-primary opacity-60 flex flex-col items-center gap-5">
-        <Summary />
-        <Hourly />
-        <Daily />
-        <Radar />
-        <Details />
-      </div>
-    </div>
+    <>
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<WeatherApp />} />
+          <Route path="/calculator" element={<CalculatorApp />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
