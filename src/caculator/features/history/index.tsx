@@ -1,7 +1,9 @@
-import styled from 'styled-components';
 import { useContext } from 'react';
-import Result from '../../shared/ui/result';
+
+import styled from 'styled-components';
+
 import { HistoryContext, HistoryType } from '../../app/context/historyContext.tsx';
+import Result from '../../shared/ui/result';
 
 export default function History() {
   const context = useContext(HistoryContext);
@@ -12,7 +14,7 @@ export default function History() {
 
   const handleDeleteButton = (id: number) => {
     setHistory((prev: HistoryType[]) => {
-      return prev.filter((item) => item.id !== id);
+      return prev.filter(item => item.id !== id);
     });
   };
 
@@ -23,7 +25,7 @@ export default function History() {
   return (
     <Wrapper>
       <Container>
-        {[...history].reverse().map((item) => (
+        {[...history].reverse().map(item => (
           <Result key={item.id} item={item} handleDeleteButton={handleDeleteButton} />
         ))}
       </Container>
@@ -51,6 +53,7 @@ const ResetButton = styled.button`
   width: 150px;
   height: 50px;
   background-color: darkred;
+  color: wheat;
 `;
 
 const Container = styled.div`

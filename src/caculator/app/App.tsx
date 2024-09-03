@@ -17,8 +17,8 @@ export default function Calculator() {
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
   padding: 90px 0;
-  height: 100%;
-  background-color: #cccccc;
+  height: 100vh;
+  background-color: rgb(64 64 64);
 `;

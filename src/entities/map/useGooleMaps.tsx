@@ -6,6 +6,7 @@ const useGoogleMaps = () => {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [marker, setMarker] = useState<google.maps.marker.AdvancedMarkerElement | null>(null);
   const ref = useRef<HTMLDivElement>(null);
+  const [mapType, setMapType] = useState('PA0');
 
   const { weather } = useWeatherStore();
 
@@ -22,7 +23,7 @@ const useGoogleMaps = () => {
           lat: position.lat,
           lng: position.lon,
         },
-        zoom: 12,
+        zoom: 10,
         mapId: '481de024daacacb7',
         disableDefaultUI: true,
         clickableIcons: false,
@@ -75,15 +76,15 @@ const useGoogleMaps = () => {
 
     const newImage = new google.maps.ImageMapType({
       getTileUrl: function (coord, zoom) {
-        return `https://maps.openweathermap.org/maps/2.0/weather/PA0/${zoom}/${coord.x}/${coord.y}?appid=${import.meta.env.VITE_APP_WEATHER_API_KEY}&fill_bound=true`;
+        return `https://maps.openweathermap.org/maps/2.0/weather/${mapType}/${zoom}/${coord.x}/${coord.y}?appid=${import.meta.env.VITE_APP_WEATHER_API_KEY}&fill_bound=true&opacity=${mapType === 'PA0' ? 1 : 0.3}`;
       },
       tileSize: new google.maps.Size(256, 256),
     });
 
     map.overlayMapTypes.insertAt(0, newImage);
-  }, [map]);
+  }, [map, mapType]);
 
-  return { ref };
+  return { setMapType, ref };
 };
 
 export default useGoogleMaps;

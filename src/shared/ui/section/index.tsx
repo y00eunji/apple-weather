@@ -1,13 +1,14 @@
 import { cn } from '@/shared/lib/cn.ts';
 
-import { HTMLAttributes, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 type Size = 'daily' | 'detail' | 'hourly' | 'radar';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props {
   size: Size;
-  title: string;
+  title?: string;
   children?: ReactNode;
+  className?: string;
 }
 
 const getSectionAttributes = (size: Size) => {
@@ -27,9 +28,9 @@ export default function Section({ size, title, children, className, ...restProps
   const customSize = getSectionAttributes(size);
 
   return (
-    <div className={cn(`w-[90%] rounded-3xl bg-backgroundSection p-4 ${customSize} ${className}`)} {...restProps}>
-      <div className="text-[15px] mb-2">{title}</div>
+    <section className={cn(`w-[90%] rounded-3xl bg-backgroundSection p-4 ${customSize} ${className}`)} {...restProps}>
+      {title && <div className="text-[15px] mb-2">{title}</div>}
       {children}
-    </div>
+    </section>
   );
 }

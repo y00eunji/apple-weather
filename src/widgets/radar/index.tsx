@@ -3,7 +3,7 @@ import Section from '@/shared/ui/section';
 
 export default function Radar() {
   return (
-    <Section title="강수량 지도" size={'radar'}>
+    <Section size={'radar'}>
       <Map />
     </Section>
   );

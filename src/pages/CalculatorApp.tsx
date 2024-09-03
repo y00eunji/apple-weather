@@ -1,5 +1,11 @@
 import Calculator from '@/caculator/app/App.tsx';
+import Navigation from '@/widgets/nav';
 
 export default function CalculatorApp() {
-  return <Calculator />;
+  return (
+    <div className="flex">
+      <Navigation />
+      <Calculator />
+    </div>
+  );
 }

@@ -3,8 +3,18 @@ import useGoogleMaps from '@/entities/map/useGooleMaps.tsx';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
 
 function MapComponent() {
-  const { ref } = useGoogleMaps();
-  return <div ref={ref} id="map" className="h-[90%] w-full" />;
+  const { setMapType, ref } = useGoogleMaps();
+
+  return (
+    <>
+      <div className="flex gap-3 ml-1 text-[15px]">
+        <button onClick={() => setMapType('PA0')}>강수량지도</button> |
+        <button onClick={() => setMapType('WND')}>풍향지도</button> |
+        <button onClick={() => setMapType('TA2')}>기온지도</button>
+      </div>
+      <div ref={ref} id="map" className="h-[90%] w-full rounded-2xl mt-2" />
+    </>
+  );
 }
 
 export default function Map() {

@@ -3,15 +3,15 @@ import { DailyWeatherType } from '@/entities/weather/types/weatherType.ts';
 const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 
 interface Props {
-  key: number;
+  index: number;
   day: DailyWeatherType['list'][number];
 }
 
-export default function DayWeather({ key, day }: Props) {
+export default function DayWeather({ index, day }: Props) {
   return (
     <div className="text-[16px] flex justify-between items-center border-t border-white border-opacity-15 pt-1">
       <div className="w-[20%] font-semibold text-[17px]">
-        {key === 0 ? '오늘' : daysOfWeek[new Date(day.dt * 1000).getUTCDay()]}
+        {index === 0 ? '오늘' : daysOfWeek[new Date(day.dt * 1000).getUTCDay()]}
       </div>
       <div className="w-[40%] flex justify-center items-center">
         <img

@@ -10,7 +10,7 @@ export default function DailyWeather() {
   return (
     <div className="flex flex-col gap-2 w-full">
       {daily.list.map((day, index) => (
-        <DayWeather key={index} day={day} />
+        <DayWeather key={index} index={index} day={day} />
       ))}
     </div>
   );
