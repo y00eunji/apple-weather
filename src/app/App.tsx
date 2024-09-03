@@ -1,6 +1,6 @@
 import CalculatorApp from '@/pages/CalculatorApp.tsx';
 import WeatherApp from '@/pages/WeatherApp.tsx';
-import Navigation from '@/shared/ui/nav';
+import Navigation from '@/widgets/nav';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
