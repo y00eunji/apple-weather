@@ -1,3 +1,5 @@
+import Calculator from '@/caculator/app/App.tsx';
+
 export default function CalculatorApp() {
-  return <div>CalculatorApp</div>;
+  return <Calculator />;
 }

@@ -1,4 +1,4 @@
-import HourlyWeather from '@/entities/hourly/ui';
+import HourlyWeather from '@/entities/hourly';
 import Section from '@/shared/ui/section';
 
 export default function Hourly() {

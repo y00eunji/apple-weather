@@ -1,11 +1,10 @@
-import { useWeatherStore } from '@/app/store/weatherStore';
+import { useWeatherStore } from '@/app/store/weatherStore.ts';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
 export default function HourlyWeather() {
   const { weather } = useWeatherStore();
-
   if (!weather) return null;
 
   const { current, hourly } = weather;

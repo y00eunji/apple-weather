@@ -2,8 +2,9 @@ import { useWeatherStore } from '@/app/store/weatherStore.ts';
 
 export default function CurrentWeather() {
   const { weather } = useWeatherStore();
-  if (!weather) return;
-  const { current } = weather;
+  const current = weather?.current;
+
+  if (!current) return;
 
   return (
     <div className="flex flex-col items-center justify-center font-medium">
