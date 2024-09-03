@@ -13,5 +13,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.weather-detail': {
+          fontSize: '2.25rem',
+          fontWeight: '600',
+          height: '150px',
+          display: 'flex',
+          alignItems: 'center',
+        },
+      });
+    },
+  ],
 };

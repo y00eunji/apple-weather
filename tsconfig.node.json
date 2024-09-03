@@ -21,5 +21,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts", ".eslintrc.cjs", "src/shared/@types/svg.d.ts", "vite-env.d.ts"]
+  "include": ["vite.config.ts", ".eslintrc.cjs"]
 }
