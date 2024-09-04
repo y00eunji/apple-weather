@@ -1,17 +1,16 @@
 import { useWeatherStore } from '@/app/store/weatherStore.ts';
-import { startWeatherWorker } from '@/entities/weather/workers/workerInstance.ts';
-
-import { useEffect } from 'react';
+import { weatherWorkerStore } from '@/app/store/workerStore.ts';
+import { startWeatherWorker, stopWeatherWorker } from '@/entities/weather/workers/workerInstance.ts';
 
 export const useWeatherWorker = () => {
   const setWeatherData = useWeatherStore(state => state.setWeather);
+  const { isWorkerRunning, startWorker, stopWorker } = weatherWorkerStore.getState();
 
-  useEffect(() => {
+  if (!isWorkerRunning) {
     startWeatherWorker(setWeatherData);
-
-    return () => {
-      // 웹 워커를 종료하고 싶다면 이 부분에서 종료 호출하기!
-      // stopWeatherWorker();
-    };
-  }, [setWeatherData]);
+    startWorker();
+  } else {
+    stopWeatherWorker();
+    stopWorker();
+  }
 };

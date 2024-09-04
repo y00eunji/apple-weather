@@ -1,7 +1,9 @@
+import Buttons from '@/caculator/features/calculator';
+import CalcView from '@/caculator/shared/ui/calcView';
+
 import { useState } from 'react';
+
 import styled from 'styled-components';
-import CalcView from '../../shared/ui/calcView';
-import Buttons from '../../features/calculator';
 
 export default function CalcSection() {
   const [input, setInput] = useState('');

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import HistoryContextProvider from '@/caculator/app/context/historyContext.tsx';
+import CalcSection from '@/caculator/section/calculator';
+import HistorySection from '@/caculator/section/history';
 
-import CalcSection from '../section/calculator';
-import HistorySection from '../section/history';
-import HistoryContextProvider from './context/historyContext.tsx';
+import styled from 'styled-components';
 
 export default function Calculator() {
   return (

@@ -1,4 +1,3 @@
-// useScrollPosition.js
 import { useEffect } from 'react';
 
 export const useScrollPosition = () => {

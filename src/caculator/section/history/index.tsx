@@ -1,5 +1,5 @@
-import History from '../../features/history';
+import History from '@/caculator/features/history';
 
 export default function HistorySection() {
-       return <History />;
+  return <History />;
 }

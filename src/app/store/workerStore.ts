@@ -1,33 +1,26 @@
-import { TotalWeatherType } from '@/entities/weather/types/weatherType.ts';
+import { CITIES } from '@/shared/constants/locations.ts';
 
 import { create } from 'zustand';
 
-interface WorkerStore {
+interface WeatherWorkerStore {
+  currentIndex: number;
   isWorkerRunning: boolean;
-  startWorker: (_setWeatherData: (_data: TotalWeatherType) => void) => void;
+  incrementIndex: () => void;
+  resetIndex: () => void;
+  setIndex: (_index: number) => void;
+  startWorker: () => void;
   stopWorker: () => void;
 }
 
-let weatherWorker: Worker | null = null;
-
-export const useWorkerStore = create<WorkerStore>(set => ({
+export const weatherWorkerStore = create<WeatherWorkerStore>(set => ({
+  currentIndex: 0,
   isWorkerRunning: false,
-  startWorker: (setWeatherData: (_data: TotalWeatherType) => void) => {
-    if (!weatherWorker) {
-      weatherWorker = new Worker('/src/entities/weather/workers/getWeatherDataWorker.ts', { type: 'module' });
-      weatherWorker.postMessage({});
-
-      weatherWorker.onmessage = event => {
-        setWeatherData(event.data as TotalWeatherType);
-      };
-    }
-    set({ isWorkerRunning: true });
-  },
-  stopWorker: () => {
-    if (weatherWorker) {
-      weatherWorker.terminate();
-      weatherWorker = null;
-    }
-    set({ isWorkerRunning: false });
-  },
+  incrementIndex: () =>
+    set(state => ({
+      currentIndex: (state.currentIndex + 1) % CITIES.length, // 인덱스가 목록 길이를 초과하지 않도록
+    })),
+  resetIndex: () => set({ currentIndex: 0 }),
+  setIndex: (index: number) => set({ currentIndex: index % CITIES.length }), // 인덱스가 목록 길이를 초과하지 않도록
+  startWorker: () => set({ isWorkerRunning: true }),
+  stopWorker: () => set({ isWorkerRunning: false }),
 }));

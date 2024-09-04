@@ -1,9 +1,9 @@
+import { HistoryContext, HistoryType } from '@/caculator/app/context/historyContext.tsx';
+import Result from '@/caculator/shared/ui/result';
+
 import { useContext } from 'react';
 
 import styled from 'styled-components';
-
-import { HistoryContext, HistoryType } from '../../app/context/historyContext.tsx';
-import Result from '../../shared/ui/result';
 
 export default function History() {
   const context = useContext(HistoryContext);
