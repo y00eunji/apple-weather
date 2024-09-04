@@ -1,4 +1,4 @@
-import { useWeatherStore } from '@/app/store/weatherStore.ts';
+import { useWeatherStore } from '@/shared/store/weatherStore.ts';
 
 import { useEffect, useRef, useState } from 'react';
 

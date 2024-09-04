@@ -1,4 +1,4 @@
-import { useWeatherStore } from '@/app/store/weatherStore.ts';
+import { useWeatherStore } from '@/shared/store/weatherStore.ts';
 import Section from '@/shared/ui/section';
 
 export default function DetailsWeather() {

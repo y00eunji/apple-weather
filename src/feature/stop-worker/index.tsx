@@ -1,8 +1,8 @@
-import { useWeatherStore } from '@/app/store/weatherStore.ts';
-import { weatherWorkerStore } from '@/app/store/workerStore.ts';
 import { startWeatherWorker, stopWeatherWorker } from '@/entities/weather/workers/workerInstance.ts';
+import { useWeatherStore } from '@/shared/store/weatherStore.ts';
+import { weatherWorkerStore } from '@/shared/store/workerStore.ts';
 
-import { VscDebugStart } from 'react-icons/vsc';
+import { CiPause1, CiPlay1 } from 'react-icons/ci';
 
 export default function ControlWorkerButton() {
   const setWeatherData = useWeatherStore(state => state.setWeather);
@@ -22,14 +22,18 @@ export default function ControlWorkerButton() {
       stopWorker();
     }
 
-    // 상태 변경 후 상태를 확인하려면 상태 업데이트를 확인할 수 있도록 리렌더링을 기다립니다.
+    // 상태 변경 후 상태 확인 : 상태 업데이트를 확인할 수 있도록 리렌더링 기다리기
     const updatedState = weatherWorkerStore.getState().isWorkerRunning;
     console.log('Updated isWorkerRunning:', updatedState, currentIndex);
   };
 
   return (
     <div className="w-[90%] h-[20px] flex justify-end">
-      <VscDebugStart onClick={handleStartButton} size={27} />
+      {isWorkerRunning ? (
+        <CiPlay1 onClick={handleStartButton} size={27} />
+      ) : (
+        <CiPause1 onClick={handleStartButton} size={27} />
+      )}
     </div>
   );
 }

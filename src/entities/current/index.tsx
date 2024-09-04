@@ -1,4 +1,4 @@
-import { useWeatherStore } from '@/app/store/weatherStore.ts';
+import { useWeatherStore } from '@/shared/store/weatherStore.ts';
 
 export default function CurrentWeather() {
   const { weather } = useWeatherStore();

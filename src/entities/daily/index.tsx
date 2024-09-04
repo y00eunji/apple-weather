@@ -1,5 +1,5 @@
-import { useWeatherStore } from '@/app/store/weatherStore.ts';
 import DayWeather from '@/entities/daily/ui/DayWeather.tsx';
+import { useWeatherStore } from '@/shared/store/weatherStore.ts';
 
 export default function DailyWeather() {
   const { weather } = useWeatherStore();

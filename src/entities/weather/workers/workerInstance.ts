@@ -1,5 +1,5 @@
-import { weatherWorkerStore } from '@/app/store/workerStore.ts';
 import { TotalWeatherType } from '@/entities/weather/types/weatherType.ts';
+import { weatherWorkerStore } from '@/shared/store/workerStore.ts';
 
 let weatherWorker: Worker | null = null;
 

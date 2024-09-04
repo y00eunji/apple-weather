@@ -1,4 +1,4 @@
-import { useWeatherStore } from '@/app/store/weatherStore.ts';
+import { useWeatherStore } from '@/shared/store/weatherStore.ts';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';

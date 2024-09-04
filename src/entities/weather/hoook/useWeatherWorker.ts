@@ -1,6 +1,6 @@
-import { useWeatherStore } from '@/app/store/weatherStore.ts';
-import { weatherWorkerStore } from '@/app/store/workerStore.ts';
 import { startWeatherWorker, stopWeatherWorker } from '@/entities/weather/workers/workerInstance.ts';
+import { useWeatherStore } from '@/shared/store/weatherStore.ts';
+import { weatherWorkerStore } from '@/shared/store/workerStore.ts';
 
 export const useWeatherWorker = () => {
   const setWeatherData = useWeatherStore(state => state.setWeather);

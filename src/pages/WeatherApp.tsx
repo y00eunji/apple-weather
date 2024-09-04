@@ -1,7 +1,7 @@
-import { useWeatherStore } from '@/app/store/weatherStore.ts';
 import useInitWorker from '@/entities/weather/hoook/useInitWorker.ts';
 import ControlWorkerButton from '@/feature/stop-worker';
 import { useScrollPosition } from '@/shared/hook/useScroll.ts';
+import { useWeatherStore } from '@/shared/store/weatherStore.ts';
 import Daily from '@/widgets/daily';
 import Details from '@/widgets/details';
 import Hourly from '@/widgets/hourly';
