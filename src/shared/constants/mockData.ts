@@ -1,4 +1,4 @@
-import { CurrentWeatherType, DailyWeatherType, HourlyWeatherType } from '@/entities/weather/types/weatherType.ts';
+import { CurrentWeatherType, DailyWeatherType, HourlyWeatherType } from '@/shared/types/weatherType.ts';
 
 export const CurrentMock: CurrentWeatherType = {
   coord: {

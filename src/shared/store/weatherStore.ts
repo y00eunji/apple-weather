@@ -1,4 +1,4 @@
-import { TotalWeatherType } from '@/entities/weather/types/weatherType.ts';
+import { TotalWeatherType } from '@/shared/types/weatherType.ts';
 
 import { create } from 'zustand';
 

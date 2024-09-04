@@ -2,7 +2,7 @@ import { CITIES } from '@/shared/constants/locations.ts';
 
 import { create } from 'zustand';
 
-interface WeatherWorkerStore {
+interface WorkerStore {
   currentIndex: number;
   isWorkerRunning: boolean;
   incrementIndex: () => void;
@@ -12,7 +12,7 @@ interface WeatherWorkerStore {
   stopWorker: () => void;
 }
 
-export const weatherWorkerStore = create<WeatherWorkerStore>(set => ({
+export const useWorkerStore = create<WorkerStore>(set => ({
   currentIndex: 0,
   isWorkerRunning: false,
   incrementIndex: () =>

@@ -1,4 +1,4 @@
-import { DailyWeatherType } from '@/entities/weather/types/weatherType.ts';
+import { DailyWeatherType } from '@/shared/types/weatherType.ts';
 
 const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 

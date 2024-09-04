@@ -1,4 +1,4 @@
-import { DailyWeatherType } from '@/entities/weather/types/weatherType.ts';
+import { DailyWeatherType } from '@/shared/types/weatherType.ts';
 
 export const getDailyWeather = async (city: string | undefined): Promise<DailyWeatherType | null> => {
   try {

@@ -1,4 +1,4 @@
-import { getWeatherData } from '@/shared/api';
+import { getWeatherData } from '@/shared/api/index.ts';
 import { CITIES } from '@/shared/constants/locations.ts';
 
 const INTERVAL_MS = 10000;
@@ -10,9 +10,8 @@ const fetchWeatherData = async () => {
 
   try {
     const { current, hourly, daily } = await getWeatherData(location);
-    postMessage({ current, hourly, daily });
+    postMessage({ current, hourly, daily }); // 메인 스레드로 날씨 데이터 전송
 
-    // 인덱스 증가 (목록의 끝에 도달하면 처음으로 돌아가도록)
     currentIndex = (currentIndex + 1) % CITIES.length;
   } catch (error) {
     console.error('Error fetching weather data:', error);
@@ -22,7 +21,7 @@ const fetchWeatherData = async () => {
 // 메시지 수신 시 인덱스 설정
 self.addEventListener('message', event => {
   if (event.data.index !== undefined) {
-    currentIndex = event.data.index % CITIES.length; // 전달받은 인덱스가 목록의 길이를 초과하지 않도록
+    currentIndex = event.data.index % CITIES.length; // index 수신 후 설정
   }
   fetchWeatherData();
 });
