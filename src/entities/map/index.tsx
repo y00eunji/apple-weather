@@ -1,4 +1,5 @@
 import useGoogleMaps from '@/entities/map/useGooleMaps.tsx';
+import { MAP_TYPES } from '@/shared/constants/mapTypes.ts';
 import { cn } from '@/shared/lib/cn.ts';
 
 import { useState } from 'react';
@@ -9,30 +10,25 @@ function MapComponent() {
   const { setMapType, ref } = useGoogleMaps();
   const [activeType, setActiveType] = useState('PA0');
 
-  const handleType = (type: string) => {
+  const handleType = (type: (typeof MAP_TYPES)[keyof typeof MAP_TYPES]) => {
     setMapType(type);
     setActiveType(type);
+  };
+
+  const getButtonStyle = (type: (typeof MAP_TYPES)[keyof typeof MAP_TYPES]) => {
+    return cn(activeType === type && 'rounded-2xl bg-primary', 'w-[50px] h-[30px]', type === 'PA0' ? 'w-[70px]' : '');
   };
 
   return (
     <>
       <div className="flex ml-1 text-[15px] w-full">
-        <button
-          onClick={() => handleType('PA0')}
-          className={cn(activeType === 'PA0' && 'rounded-2xl bg-primary', ' w-[70px] h-[30px]')}
-        >
+        <button onClick={() => handleType(MAP_TYPES.PRECIPITATION)} className={getButtonStyle('PA0')}>
           강수량
         </button>
-        <button
-          onClick={() => handleType('WND')}
-          className={cn(activeType === 'WND' && 'rounded-2xl bg-primary', ' w-[50px] h-[30px]')}
-        >
+        <button onClick={() => handleType(MAP_TYPES.WIND)} className={getButtonStyle('WND')}>
           풍향
         </button>
-        <button
-          onClick={() => handleType('TA2')}
-          className={cn(activeType === 'TA2' && 'rounded-2xl bg-primary', ' w-[50px] h-[30px]')}
-        >
+        <button onClick={() => handleType(MAP_TYPES.TEMPERATURE)} className={getButtonStyle('TA2')}>
           기온
         </button>
       </div>
