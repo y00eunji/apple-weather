@@ -7,7 +7,6 @@ interface WorkerStore {
   isWorkerRunning: boolean;
   incrementIndex: () => void;
   resetIndex: () => void;
-  setIndex: (_index: number) => void;
   startWorker: () => void;
   stopWorker: () => void;
 }
@@ -17,10 +16,9 @@ export const useWorkerStore = create<WorkerStore>(set => ({
   isWorkerRunning: false,
   incrementIndex: () =>
     set(state => ({
-      currentIndex: (state.currentIndex + 1) % CITIES.length, // 인덱스가 목록 길이를 초과하지 않도록
+      currentIndex: (state.currentIndex + 1) % CITIES.length,
     })),
   resetIndex: () => set({ currentIndex: 0 }),
-  setIndex: (index: number) => set({ currentIndex: index % CITIES.length }), // 인덱스가 목록 길이를 초과하지 않도록
   startWorker: () => set({ isWorkerRunning: true }),
   stopWorker: () => set({ isWorkerRunning: false }),
 }));

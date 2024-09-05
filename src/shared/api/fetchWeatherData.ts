@@ -22,8 +22,8 @@ const fetchWeatherData = async () => {
 self.addEventListener('message', event => {
   if (event.data.index !== undefined) {
     currentIndex = event.data.index % CITIES.length; // index 수신 후 설정
+    fetchWeatherData();
   }
-  fetchWeatherData();
 });
 
 // 주기적으로 데이터 가져오기

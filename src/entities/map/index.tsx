@@ -19,21 +19,21 @@ function MapComponent() {
       <div className="flex ml-1 text-[15px] w-full">
         <button
           onClick={() => handleType('PA0')}
-          className={cn(activeType === 'PA0' && 'rounded-2xl bg-primary', ' w-[90px] h-[30px]')}
+          className={cn(activeType === 'PA0' && 'rounded-2xl bg-primary', ' w-[70px] h-[30px]')}
         >
-          강수량지도
+          강수량
         </button>
         <button
           onClick={() => handleType('WND')}
-          className={cn(activeType === 'WND' && 'rounded-2xl bg-primary', ' w-[90px] h-[30px]')}
+          className={cn(activeType === 'WND' && 'rounded-2xl bg-primary', ' w-[50px] h-[30px]')}
         >
-          풍향지도
-        </button>{' '}
+          풍향
+        </button>
         <button
           onClick={() => handleType('TA2')}
-          className={cn(activeType === 'TA2' && 'rounded-2xl bg-primary', ' w-[90px] h-[30px]')}
+          className={cn(activeType === 'TA2' && 'rounded-2xl bg-primary', ' w-[50px] h-[30px]')}
         >
-          기온지도
+          기온
         </button>
       </div>
       <div ref={ref} id="map" className="h-[90%] w-full rounded-2xl mt-2" />

@@ -8,7 +8,7 @@ export const startWeatherWorker = (setWeatherData: (_data: TotalWeatherType) => 
   const { currentIndex, incrementIndex, isWorkerRunning, startWorker } = useWorkerStore.getState();
 
   if (!weatherWorker && !isWorkerRunning) {
-    weatherWorker = new Worker('/src/shared/api/getWeatherDataWorker.ts', { type: 'module' }); // 1. 워커 생성
+    weatherWorker = new Worker('/src/shared/api/fetchWeatherData.ts', { type: 'module' }); // 워커 생성
 
     // 메세지 수신 후 날씨 데이터 저장
     weatherWorker.onmessage = event => {

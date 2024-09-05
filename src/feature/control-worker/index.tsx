@@ -6,12 +6,7 @@ import { CiPause1, CiPlay1 } from 'react-icons/ci';
 
 export default function ControlWorkerButton() {
   const setWeatherData = useWeatherStore(state => state.setWeather);
-  const { isWorkerRunning, startWorker, stopWorker, currentIndex } = useWorkerStore(state => ({
-    isWorkerRunning: state.isWorkerRunning,
-    startWorker: state.startWorker,
-    stopWorker: state.stopWorker,
-    currentIndex: state.currentIndex,
-  }));
+  const { isWorkerRunning, startWorker, stopWorker, currentIndex } = useWorkerStore();
 
   const handleStartButton = () => {
     if (!isWorkerRunning) {

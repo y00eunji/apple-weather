@@ -1,4 +1,4 @@
-import ControlWorkerButton from '@/feature/stop-worker';
+import ControlWorkerButton from '@/feature/control-worker';
 import { useScrollPosition } from '@/shared/hook/useScroll.ts';
 import { startWeatherWorker } from '@/shared/lib/workerInstance.ts';
 import { useWeatherStore } from '@/shared/store/weatherStore.ts';
